@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "surge-multiplier-heatmap"
+version = "0.1.0"
+description = "Surge multiplier per geohash zone from PR01 predicted demand and a supply proxy, capped and smoothed into a heatmap."
+requires-python = ">=3.11"
+dependencies = [
+    "routes-pricing-shared==0.2.0",
+    "pandas==2.3.3",
+    "numpy==2.2.6",
+    "scipy==1.15.3",
+    "matplotlib==3.10.7",
+    "geopandas==1.1.2",
+    "contextily==1.6.2",
+    "pyproj==3.7.2",
+]
+
+[project.optional-dependencies]
+dev = ["pytest==8.4.2", "jupytext==1.17.3", "nbconvert==7.16.6", "nbclient==0.10.2", "ipykernel==6.30.1"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
